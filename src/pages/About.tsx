@@ -207,7 +207,8 @@ const About = () => {
               All rights reserved.
             </p>
             <p className="mt-2">
-              +55 (12) 98119-8452
+                +55 12 98119-8452
+
             </p>
             </div>
             <div className="flex gap-6">
