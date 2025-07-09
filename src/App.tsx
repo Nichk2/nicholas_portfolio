@@ -12,6 +12,7 @@ import About from "./pages/About";
 import AwesomeGames from "./pages/AwesomeGames";
 import Photox from "./pages/Photox";
 import NotFound from "./pages/NotFound";
+import './i18n';
 
 const queryClient = new QueryClient();
 

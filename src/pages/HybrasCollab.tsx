@@ -1,7 +1,8 @@
- import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ArrowUp, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import CASE_STUDY_STYLES from "@/components/CaseStudyTemplate";
 import Hybras_logo from "../Image/HYBRAS/logo.svg";
@@ -21,6 +22,7 @@ import Submit_data from "../Image/HYBRAS/Submeter Dado.png";
 import Grid from "../Image/HYBRAS/Grid - Depositante.png";
 
 const HybrasCollab = () => {
+  const { t } = useTranslation('hybrascollab');
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [currentSolutionSlide, setCurrentSolutionSlide] = useState(0);
   const [currentTestSlide, setCurrentTestSlide] = useState(0);
@@ -44,48 +46,19 @@ const HybrasCollab = () => {
   };
 
   // Solution carousel data
-  const solutionCarouselItems = [
-    {
-      image: Submit_data,
-      title: "Have a place to share your work!",
-      bullets: ["Upload your research", "Leave comments to the evaluator"],
-    },
-    {
-      image: History,
-      title: "Have Accountability in the system",
-      bullets: [
-        "History of chats and status of the process",
-        "Respect for each research and its licenses",
-        "Attention and care with the uploaded documents",
-      ],
-    },
-    {
-      image: Notes,
-      title: "Keep tracking your notifications",
-      bullets: [
-        "Notifications screen is available and a design based on Process, so the user can be served by the product in pro active way",
-        "Keep your eyes on the bell!",
-      ],
-    },
-    {
-      image: Dashboard,
-      title: "Dashboard",
-      bullets: ["Manage research activities with a comprehensive dashboard"],
-    },
-  ];
+  const solutionCarouselRaw = t('hybras.solutionCarousel', { returnObjects: true });
+  const solutionCarouselItems = Array.isArray(solutionCarouselRaw)
+    ? solutionCarouselRaw.map((item: any, index: number) => ({
+        ...item,
+        image: [Submit_data, History, Notes, Dashboard][index]
+      }))
+    : [];
 
   // Test carousel data
   const testCarouselItems = [
-    {
-      image: Test1,
-    },
-    {
-      image: Test2,
-    },
-    {
-      image: Test3,
-
-    },
+    { image: Test1 },
+    { image: Test2 },
+    { image: Test3 },
   ];
 
   // Before/After carousel data
@@ -95,44 +68,18 @@ const HybrasCollab = () => {
   const caseStudyData = {
     title: "HYBRAS COLLAB",
     image: Hybras_logo,
-    category: "WEB APP",
+    category: t('hybras.caseStudyData.category'),
     year: "2024",
     client: "SGB - Serviço Geológico do Brasil",
-    duration: "4 months",
+    duration: t('hybras.hero.time'),
     role: "Lead UX/UI Designer",
-    overview:
-      "This case study outlines the creation process of a platform so students and scholars can upload research related with hydrology and soil. Hybras Collab library of research already exist, however its operations occurs via email (they are sent via email) and its adminstration is difficult. So we decided, together with our client, to simplify this process and create a platform to do such service and also to promote connection between people who are interested in such subjects.",
-    challenge:
-      "Scholars lack an efficient platform to share and access hydrology research. How can we automate a email based system? Where we can centralize the information?",
-    solution:
-      "A platform so they can upload Hydrological studies and also visualize other research",
-    process: [
-      {
-        phase: "Research & Discovery",
-        description:
-          "Conducted in-depth interviews with creative professionals, analyzed existing collaboration tools, and identified key pain points in current workflows and communication methods.",
-      },
-      {
-        phase: "User Journey Mapping",
-        description:
-          "Created detailed user journey maps for different personas including designers, project managers, and clients to understand their specific needs and touchpoints.",
-      },
-      {
-        phase: "Wireframing & Prototyping",
-        description:
-          "Developed low and high-fidelity wireframes focusing on intuitive navigation and efficient task completion, followed by interactive prototypes for user testing.",
-      },
-      {
-        phase: "Visual Design & Testing",
-        description:
-          "Created a cohesive design system with modern aesthetics, conducted usability testing sessions, and iteratively refined the interface based on user feedback.",
-      },
-    ],
-    results: [
-      'Great impact in the new conception of the product. What once was a simple and complicated system of emails now has a robust design and purpose.',
-      'Successfully handed off finalized UX/UI designs to the development team, with positive feedback from the client.',
-      'Project is currently under development, with outcomes to be measured post-launch.'
-    ],
+    overview: t('hybras.caseStudyData.overview'),
+    challenge: t('hybras.caseStudyData.challenge'),
+    solution: t('hybras.caseStudyData.solution'),
+    process: t('hybras.caseStudyData.process', { returnObjects: true }),
+    results: Array.isArray(t('hybras.caseStudyData.results', { returnObjects: true }))
+      ? t('hybras.caseStudyData.results', { returnObjects: true })
+      : [],
   };
 
   return (
@@ -148,7 +95,7 @@ const HybrasCollab = () => {
               className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 font-body"
             >
               <ChevronLeft className="w-5 h-5" />
-              <span>Back to portfolio</span>
+              <span>{t('hybras.navigation.back')}</span>
             </Link>
             <Link
               to="/"
@@ -182,7 +129,7 @@ const HybrasCollab = () => {
           >
             <div className="enhanced-glass p-6 rounded-2xl">
               <h3 className="font-display font-semibold text-primary mb-3 text-lg">
-                Client
+                {t('hybras.hero.client')}
               </h3>
               <p className="text-muted-foreground font-body font-light">
                 {caseStudyData.client}
@@ -190,7 +137,7 @@ const HybrasCollab = () => {
             </div>
             <div className="enhanced-glass p-6 rounded-2xl">
               <h3 className="font-display font-semibold text-accent mb-3 text-lg">
-                Year
+                {t('hybras.hero.year')}
               </h3>
               <p className="text-muted-foreground font-body font-light">
                 {caseStudyData.year}
@@ -198,7 +145,7 @@ const HybrasCollab = () => {
             </div>
             <div className="enhanced-glass p-6 rounded-2xl">
               <h3 className="font-display font-semibold text-primary mb-3 text-lg">
-                Duration
+                {t('hybras.hero.duration')}
               </h3>
               <p className="text-muted-foreground font-body font-light">
                 {caseStudyData.duration}
@@ -206,7 +153,7 @@ const HybrasCollab = () => {
             </div>
             <div className="enhanced-glass p-6 rounded-2xl">
               <h3 className="font-display font-semibold text-accent mb-3 text-lg">
-                Role
+                {t('hybras.hero.role')}
               </h3>
               <p className="text-muted-foreground font-body font-light">
                 {caseStudyData.role}
@@ -222,7 +169,7 @@ const HybrasCollab = () => {
           {/* Overview */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              Overview
+              {t('hybras.sections.overview')}
             </h2>
             <p className={CASE_STUDY_STYLES.typography.body}>
               {caseStudyData.overview}
@@ -232,21 +179,20 @@ const HybrasCollab = () => {
           {/* Challenge */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              The Challenge
+              {t('hybras.sections.challenge')}
             </h2>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-12`}>
               {caseStudyData.challenge}
             </p>
-            <p className={`${CASE_STUDY_STYLES.typography.body}`}><span className={`${CASE_STUDY_STYLES.typography.body} text-cyan-300`}>User Insight:</span> As a former student and after a chat with other students, I understand the need for a centralized, accessible platform for academic research. Together with the client (also a scholar) we could build a good idea of product.</p>
+            <p className={`${CASE_STUDY_STYLES.typography.body}`}><span className={`${CASE_STUDY_STYLES.typography.body} text-cyan-300`}>{t('hybras.content.userInsight')}:</span> As a former student and after a chat with other students, I understand the need for a centralized, accessible platform for academic research. Together with the client (also a scholar) we could build a good idea of product.</p>
             <div className="my-8"></div>
-            <p className={`${CASE_STUDY_STYLES.typography.body}`}><span className={`${CASE_STUDY_STYLES.typography.body} text-cyan-300`}>How Might We:</span> Create a community-centric platform that simplifies research sharing and enhances collaboration among scholars?</p>
-            
+            <p className={`${CASE_STUDY_STYLES.typography.body}`}><span className={`${CASE_STUDY_STYLES.typography.body} text-cyan-300`}>{t('hybras.content.howMightWe')}:</span> Create a community-centric platform that simplifies research sharing and enhances collaboration among scholars?</p>
           </div>
 
           {/* Solution Carousel */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              The Solution
+              {t('hybras.sections.solution')}
             </h2>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-12`}>
               {caseStudyData.solution}
@@ -254,7 +200,7 @@ const HybrasCollab = () => {
 
             <div className="relative w-full overflow-hidden rounded-2xl enhanced-glass h-[600px]">
               <div className="relative h-full w-full overflow-hidden">
-                {solutionCarouselItems.map((item, index) => (
+                {solutionCarouselItems.map((item: any, index: number) => (
                   <div
                     key={`solution-${index}`}
                     className={`absolute inset-0 transition-opacity duration-500 ${
@@ -276,7 +222,7 @@ const HybrasCollab = () => {
                           {item.title}
                         </h3>
                         <ul className="list-disc pl-5 space-y-2">
-                          {item.bullets.map((bullet, i) => (
+                          {item.bullets.map((bullet: string, i: number) => (
                             <li
                               key={i}
                               className="text-muted-foreground font-body"
@@ -311,7 +257,7 @@ const HybrasCollab = () => {
                 <ChevronRight className="w-6 h-6" />
               </button>
               <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-                {solutionCarouselItems.map((_, index) => (
+                {solutionCarouselItems.map((_: any, index: number) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSolutionSlide(index)}
@@ -329,7 +275,7 @@ const HybrasCollab = () => {
           {/* Research Section */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              Research & Workshops
+              {t('hybras.sections.research')}
             </h2>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-6`}>
               Conducted three workshops with stakeholders to understand system
@@ -343,25 +289,21 @@ const HybrasCollab = () => {
                 className="w-full h-auto rounded-lg"
               />
               <p className="text-center mt-4 text-muted-foreground font-body">
-                Workshop sessions with hydrology researchers to understand their
-                needs.
+                {t('hybras.content.workshopCaption')}
               </p>
-              
             </div>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-6 mt-6`}>
-              We also analyzed competitive platforms for inspiration and to tailor the solution to hydrology research. They key point was to create the same level of organization e usability so the client and users would be able to <span className="text-cyan-300">control, analyse and also submit new research.</span>
+              {t('hybras.content.competitiveAnalysis')} <span className="text-cyan-300">control, analyse and also submit new research.</span>
             </p>
           </div>
 
           {/* Persona Section */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              User Persona
+              {t('hybras.sections.persona')}
             </h2>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-6`}>
-              Meet Maria, our primary persona - a passionate professor with
-              expertise in Civil Engineering and a focus on Water Resources and
-              the Environment.
+              {t('hybras.content.personaDescription')}
             </p>
             <div className={`${CASE_STUDY_STYLES.glassCard} p-4`}>
               <img
@@ -370,8 +312,7 @@ const HybrasCollab = () => {
                 className="w-full h-auto rounded-lg"
               />
               <p className="text-center mt-4 text-muted-foreground font-body">
-                Persona representing our target users - hydrology researchers
-                and professors
+                {t('hybras.content.personaCaption')}
               </p>
             </div>
           </div>
@@ -379,11 +320,10 @@ const HybrasCollab = () => {
           {/* Empathy Map Section */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              Empathy Map
+              {t('hybras.sections.empathy')}
             </h2>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-6`}>
-              Understanding what users say, think, do, and feel helped us design
-              a platform that truly meets their needs.
+              {t('hybras.content.empathyDescription')}
             </p>
             <div className={`${CASE_STUDY_STYLES.glassCard} p-4`}>
               <img
@@ -392,7 +332,7 @@ const HybrasCollab = () => {
                 className="w-full h-auto rounded-lg"
               />
               <p className="text-center mt-4 text-muted-foreground font-body">
-                Empathy map capturing user thoughts, feelings, and behaviors
+                {t('hybras.content.empathyCaption')}
               </p>
             </div>
           </div>
@@ -400,12 +340,10 @@ const HybrasCollab = () => {
           {/* Testing Carousel */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              Testing & Improvements
-              
+              {t('hybras.sections.testing')}
             </h2>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-6`}>
-              <span className="text-cyan-300">Three majors improvements were done in the design!</span> We conducted 6 usability tests with stakeholders and identified
-              three major improvements for the product.
+              <span className="text-cyan-300">{t('hybras.content.testingDescription')}</span>
             </p>
 
             <div className="relative w-full overflow-hidden rounded-2xl enhanced-glass h-[700px]">
@@ -418,7 +356,6 @@ const HybrasCollab = () => {
                     }`}
                   >
                     <div className="h-full w-full flex flex-col">
-                     
                       <div className="w-full h-full flex items-center justify-center p-4">
                         <img
                           src={item.image}
@@ -469,11 +406,10 @@ const HybrasCollab = () => {
           {/* Design Evolution Carousel */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              Design Evolution
+              {t('hybras.sections.evolution')}
             </h2>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-6`}>
-              See how the platform evolved from initial concepts to the final
-              polished design.
+              {t('hybras.content.evolutionDescription')}
             </p>
 
             <div className="relative w-full overflow-hidden rounded-2xl enhanced-glass">
@@ -486,7 +422,7 @@ const HybrasCollab = () => {
                   }`}
                   onClick={() => setActiveBeforeAfterTab("before")}
                 >
-                  Before
+                  {t('hybras.content.before')}
                 </button>
                 <button
                   className={`flex-1 py-4 font-display font-medium transition-colors ${
@@ -496,7 +432,7 @@ const HybrasCollab = () => {
                   }`}
                   onClick={() => setActiveBeforeAfterTab("after")}
                 >
-                  After
+                  {t('hybras.content.after')}
                 </button>
               </div>
               <div className="relative h-[600px] w-full">
@@ -608,7 +544,7 @@ const HybrasCollab = () => {
           {/* Final Product Section */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              HYBRAS COLLAB was born!
+              {t('hybras.sections.final')}
             </h2>
             <div className={`${CASE_STUDY_STYLES.glassCard} p-4`}>
               <img
@@ -617,7 +553,7 @@ const HybrasCollab = () => {
                 className="w-full h-auto rounded-lg"
               />
               <p className="text-center mt-4 text-muted-foreground font-body">
-                Final interface design of the HYBRAS COLLAB platform
+                {t('hybras.content.finalCaption')}
               </p>
             </div>
           </div>
@@ -625,10 +561,10 @@ const HybrasCollab = () => {
           {/* Results */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              Results & Impact
+              {t('hybras.sections.results')}
             </h2>
             <div className="grid md:grid-cols-1 gap-8 mb-12">
-              {caseStudyData.results.map((result, index) => (
+              {(Array.isArray(caseStudyData.results) ? caseStudyData.results : []).map((result: string, index: number) => (
                 <div key={index} className="enhanced-glass p-8 rounded-2xl">
                   <p className="text-xl font-body font-medium text-foreground">
                     {result}
@@ -646,7 +582,7 @@ const HybrasCollab = () => {
           <h2
             className={`${CASE_STUDY_STYLES.typography.sectionTitle} ${CASE_STUDY_STYLES.scrollReveal}`}
           >
-            Next Project
+            {t('hybras.sections.next')}
           </h2>
           <Link
             to="/case-study/myholybooks"

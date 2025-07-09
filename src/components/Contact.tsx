@@ -1,38 +1,39 @@
+import { useTranslation } from 'react-i18next';
+
 const Contact = () => {
+  const { t } = useTranslation('contact');
+
   return (
     <section id="contact" className="py-32 bg-card relative z-10">
       <div className="max-w-6xl mx-auto px-8 text-center">
         <div className="scroll-reveal space-y-16">
-          {/* Enhanced Main heading */}
+          {/* Main heading */}
           <h2 className="text-7xl md:text-9xl font-display font-bold mb-16 leading-tight tracking-tighter">
-            Let's craft
+            {t('heading.line1')}
             <br />
-            <span className="text-primary">something</span>
+            <span className="text-primary">{t('heading.line2')}</span>
             <br />
-            <span className="text-accent">extraordinary</span>
+            <span className="text-accent">{t('heading.line3')}</span>
           </h2>
 
-          {/* Enhanced Description */}
+          {/* Description */}
           <div className="scroll-reveal">
             <p className="text-2xl md:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-body font-light">
-              Ready to transform your vision into reality? I'd love to explore
-              your project and collaborate on creating{" "}
+              {t('description.base')}{" "}
               <span className="text-primary font-medium">
-                innovative solutions
+                {t('description.highlight')}
               </span>{" "}
-              that make a lasting impact.
+              {t('description.suffix')}
             </p>
           </div>
 
-
-
-          {/* Enhanced CTA Button */}
+          {/* CTA Button */}
           <div className="pt-20 scroll-reveal">
             <a
-              href="mailto:hello@kong.design"
+              href={`mailto:${t('button.email')}`}
               className="inline-block bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-500 px-16 py-6 text-xl font-body font-semibold rounded-full hover:scale-105"
             >
-              Start a Project
+              {t('button.text')}
             </a>
           </div>
         </div>

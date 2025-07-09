@@ -1,0 +1,62 @@
+{
+  "title": "me.",
+  "paragraphs": {
+    "intercultural": {
+      "base": "With a background in international studies and experience studying abroad, I bring a deep understanding of",
+      "highlight": "intercultural collaboration",
+      "suffix": ". I communicate well with stakeholders and thrive in diverse, cross-functional teams."
+    },
+    "data": {
+      "base": "I work comfortably with both",
+      "highlight": "qualitative and quantitative data",
+      "suffix": ", transforming insights into intuitive user experiences. I'm also used to juggling multiple projects, which sharpens my adaptability and time management skills."
+    },
+    "technical": {
+      "base": "I continuously build my technical toolkit. My current stack includes",
+      "tools": ["Figma", "Adobe XD"],
+      "coding": "and a growing fluency in",
+      "languages": "HTML5, CSS3, JavaScript, and React",
+      "suffix": "."
+    },
+    "approach": {
+      "text": "I approach every project with commitment, creativity, and a results-driven mindset — always aiming to deliver outcomes that create value for both users and businesses."
+    },
+    "design": {
+      "base": "I believe exceptional design should feel effortless — solving complex problems while creating",
+      "highlight": "genuinely delightful experiences",
+      "suffix": "."
+    }
+  },
+  "skills": {
+    "design": {
+      "title": "Design",
+      "items": [
+        "UI/UX Design",
+        "Visual Design",
+        "Prototyping",
+        "Design Systems",
+        "FrontEnd Enthusiast"
+      ]
+    },
+    "research": {
+      "title": "Research",
+      "items": [
+        "User Research",
+        "Usability Testing",
+        "Strategy",
+        "Analytics"
+      ]
+    }
+  },
+  "contact": {
+    "button": "Contact Me"
+  },
+  "footer": {
+    "copyright": {
+      "base": "© 2025",
+      "name": "Nicholas Andrade",
+      "rights": "All rights reserved."
+    },
+    "phone": "+55 12 98119-8452"
+  }
+}

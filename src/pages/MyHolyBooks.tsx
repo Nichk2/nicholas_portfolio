@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUp, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 import useScrollReveal from "@/hooks/useScrollReveal";
 import CASE_STUDY_STYLES from "@/components/CaseStudyTemplate";
 import Add_friend from '../Image/MyHolyBooks/Add_friend.svg';
@@ -28,7 +29,6 @@ import Sketch from '../Image/MyHolyBooks/Sketch.svg';
 import Style from '../Image/MyHolyBooks/Style.svg';
 import Web_lofi_hifi from '../Image/MyHolyBooks/Web_lofi-hifi.svg';
 
-// Carousel Component
 const ImageCarousel = ({ images, altPrefix = "Image" }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -42,7 +42,6 @@ const ImageCarousel = ({ images, altPrefix = "Image" }) => {
 
   return (
     <div className="relative w-full">
-      {/* Carousel Image */}
       <div className="w-full rounded-3xl overflow-hidden">
         <img 
           src={images[currentIndex]} 
@@ -51,7 +50,6 @@ const ImageCarousel = ({ images, altPrefix = "Image" }) => {
         />
       </div>
 
-      {/* Navigation Arrows */}
       <button 
         onClick={prevImage}
         className="absolute -left-10 top-1/2 -translate-y-1/2 bg-white/30 backdrop-blur-sm rounded-full p-2"
@@ -65,7 +63,6 @@ const ImageCarousel = ({ images, altPrefix = "Image" }) => {
         <ChevronLeft className="w-6 h-6 rotate-180" />
       </button>
 
-      {/* Indicator Dots */}
       <div className="flex justify-center mt-4 space-x-2">
         {images.map((_, index) => (
           <button
@@ -81,6 +78,7 @@ const ImageCarousel = ({ images, altPrefix = "Image" }) => {
 };
 
 const FinalProductTabs = () => {
+  const { t } = useTranslation('myholybooks');
   const [activeTab, setActiveTab] = useState('web');
   const [currentWebSlide, setCurrentWebSlide] = useState(0);
   const [currentMobileSlide, setCurrentMobileSlide] = useState(0);
@@ -111,13 +109,13 @@ const FinalProductTabs = () => {
           className={`py-3 px-6 font-display font-medium ${activeTab === 'web' ? 'text-primary border-b-2 border-primary' : 'text-muted-foreground'}`}
           onClick={() => setActiveTab('web')}
         >
-          Web Version
+          {t('myholybooks.finalProduct.webVersion')}
         </button>
         <button
           className={`py-3 px-6 font-display font-medium ${activeTab === 'mobile' ? 'text-primary border-b-2 border-primary' : 'text-muted-foreground'}`}
           onClick={() => setActiveTab('mobile')}
         >
-          Mobile Version
+          {t('myholybooks.finalProduct.mobileVersion')}
         </button>
       </div>
 
@@ -153,7 +151,6 @@ const FinalProductTabs = () => {
           </div>
         ) : (
           <div className="relative w-full flex justify-center items-center bg-gray-100/10 p-8 rounded-3xl">
-            {/* Mobile container with fixed width */}
             <div className="relative max-w-xs w-full">
               <img 
                 src={mobileImages[currentMobileSlide]} 
@@ -189,8 +186,8 @@ const FinalProductTabs = () => {
   );
 };
 
-// Prototype Tabs Component
 const PrototypeTabs = ({ webImage, mobileImage }) => {
+  const { t } = useTranslation('myholybooks');
   const [activeTab, setActiveTab] = useState('web');
 
   return (
@@ -200,13 +197,13 @@ const PrototypeTabs = ({ webImage, mobileImage }) => {
           className={`py-3 px-6 font-display font-medium ${activeTab === 'web' ? 'text-primary border-b-2 border-primary' : 'text-muted-foreground'}`}
           onClick={() => setActiveTab('web')}
         >
-          Web Version
+          {t('myholybooks.finalProduct.webVersion')}
         </button>
         <button
           className={`py-3 px-6 font-display font-medium ${activeTab === 'mobile' ? 'text-primary border-b-2 border-primary' : 'text-muted-foreground'}`}
           onClick={() => setActiveTab('mobile')}
         >
-          Mobile Version
+          {t('myholybooks.finalProduct.mobileVersion')}
         </button>
       </div>
 
@@ -222,6 +219,7 @@ const PrototypeTabs = ({ webImage, mobileImage }) => {
 };
 
 const MyHolyBooks = () => {
+  const { t } = useTranslation('myholybooks');
   const [showScrollTop, setShowScrollTop] = useState(false);
   useScrollReveal();
 
@@ -238,73 +236,22 @@ const MyHolyBooks = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const caseStudyData = {
-    title: "MyHolyBooks",
-    subtitle: "A Christian social network fostering faith-based connections and community",
-    category: "WEB and MOBILE",
-    year: "2024",
-    client: "Indenpendent investor",
-    duration: "5 months",
-    role: "UX/UI Designer (Research, Prototyping, Testing)",
-    overview: "MyHolyBooks is a Christian social network designed to strengthen bonds and foster authentic connections within the faith community. The platform allows users to share insights, create customized books with Bible verses, add notes, and support one another in a purpose-driven digital environment.",
-    challenge: "The Brazilian market lacked a dedicated Christian social media platform. Existing spaces like blogs felt impersonal, and users needed a safe, respectful environment to connect around shared beliefs while leveraging familiar social media engagement strategies.",
-    solutionText: "We came up with a 'simple' solution for this... MyHolyBooks!!",
-    process: [
-      {
-        phase: "Empathize",
-        description: "I conducted a meeting with the developers and with stakeholder in order to better understand the idea of the project (that was previously created), real necessities, motivations, interviews with christians and other variables so I can provide best solutions."
-      },
-      {
-        phase: "Define",
-        description: "After the meeting, we identified a key issue: the Brazilian market—where the stakeholder plans to launch first—lacks a digital environment that supports the kind of user interaction commonly found on social platforms like Facebook, X (formerly Twitter), and LinkedIn.",
-        personas: [Persona1, Persona2],
-        personaText: "To align the design process effectively, I began the persona analysis. Based on our research, we developed detailed personas to accurately represent our target users and inform our design decisions."
-      },
-      {
-        phase: "Ideate",
-        description: "The process of ideation consisted on the creation of many sketches of future vision of how the platform would look like. I conducted a benchmarking and analyzed Facebook and LinkedIn social networks seeking inspiration.",
-        designExploration: [Sketch, Style, Color],
-        featureExploration: [Group_members, Languages],
-        featureTitles: [
-          "1 - Create Your Own Group",
-          "2 - Multi-Language Support"
-        ],
-        featureDescriptions: [
-          "Implemented group creation feature to allow users to connect around specific interests or Bible study topics.",
-          "Added language selection to enable users to explore faith across different cultures and Bible translations."
-        ]
-      },
-      {
-        phase: "Prototype",
-        description: "For this phase of the process, I thought that it would be interesting to give two deliverables, a medium fidelity and a high fidelity prototypes based on the ideas I could gather during the ideation process. The reason I chose this approach is to give more freedom and security to the stakeholder on how the platform will look like.",
-        images: [Web_lofi_hifi, Mobile_lofi_hifi]
-      },
-      {
-        phase: "Test",
-        description: "I used Maze tool to help me on this extremely important part of the project. The tests (created for both versions web and mobile) had the same tasks followed of open questions related with the experience of the user.",
-        testImages: [Comment, Folders, Books, Add_friend]
-      }
-    ],
-    finalProduct: {
-      description: "In our final round of usability testing, feedback from users confirmed the platform's success in delivering an intuitive and engaging experience aligned with its purpose of fostering a faith-centered community.",
-    },
-    results: [
-      "A deep study had to be done in order to better understand variants of Christianity in Brazil. Since the main goal is to welcome all Christians, the team had to make sure to be careful with symbols, words, other elements",
-      "Positive usability test feedback on intuitive navigation",
-      "Currently in development with planned 2025",
-      "Users reported feeling 'safe and respected' in prototype testing",
-    ],
-  };
+  const results = t('results.items', { returnObjects: true });
+  const resultsArray = Array.isArray(results) ? results : [];
+
+  const featureTitles = t('designProcess.ideate.featureTitles', { returnObjects: true });
+  const featureDescriptions = t('designProcess.ideate.featureDescriptions', { returnObjects: true });
+  const featureTitlesArray = Array.isArray(featureTitles) ? featureTitles : [];
+  const featureDescriptionsArray = Array.isArray(featureDescriptions) ? featureDescriptions : [];
 
   return (
     <div className={CASE_STUDY_STYLES.background}>
-      {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 ${CASE_STUDY_STYLES.navigation}`}>
         <div className="max-w-7xl mx-auto px-8 py-6">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 font-body">
               <ChevronLeft className="w-5 h-5" />
-              <span>Back to portfolio</span>
+              <span>{t('myholybooks.backToPortfolio')}</span>
             </Link>
             <Link to="/" className="text-3xl font-display font-bold text-foreground hover:text-primary transition-colors duration-300">
               Nicholas
@@ -314,22 +261,20 @@ const MyHolyBooks = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className={CASE_STUDY_STYLES.heroSection}>
         <div className="max-w-5xl mx-auto px-8">
           <div className={`text-center ${CASE_STUDY_STYLES.scrollReveal} space-y-8`}>
             <span className={CASE_STUDY_STYLES.typography.category}>
-              {caseStudyData.category}
+              {t('myholybooks.category')}
             </span>
             <h1 className={CASE_STUDY_STYLES.typography.mainTitle}>
-              {caseStudyData.title}
+              {t('myholybooks.title')}
             </h1>
             <p className={CASE_STUDY_STYLES.typography.subtitle}>
-              {caseStudyData.subtitle}
+              {t('myholybooks.subtitle')}
             </p>
           </div>
 
-          {/* Logo Display */}
           <div className={`w-full flex items-center justify-center mt-16 mb-20 ${CASE_STUDY_STYLES.scrollReveal} p-12`}>
             <img 
               src={Logo} 
@@ -340,52 +285,57 @@ const MyHolyBooks = () => {
 
           <div className={`grid md:grid-cols-4 gap-8 text-center md:text-left ${CASE_STUDY_STYLES.scrollReveal}`}>
             <div className="enhanced-glass p-6 rounded-2xl">
-              <h3 className="font-display font-semibold text-primary mb-3 text-lg">Client</h3>
-              <p className="text-muted-foreground font-body font-light">{caseStudyData.client}</p>
+              <h3 className="font-display font-semibold text-primary mb-3 text-lg">{t('myholybooks.clientTitle')}</h3>
+              <p className="text-muted-foreground font-body font-light">{t('myholybooks.client')}</p>
             </div>
             <div className="enhanced-glass p-6 rounded-2xl">
-              <h3 className="font-display font-semibold text-accent mb-3 text-lg">Year</h3>
-              <p className="text-muted-foreground font-body font-light">{caseStudyData.year}</p>
+              <h3 className="font-display font-semibold text-accent mb-3 text-lg">{t('myholybooks.yearTitle')}</h3>
+              <p className="text-muted-foreground font-body font-light">{t('myholybooks.year')}</p>
             </div>
             <div className="enhanced-glass p-6 rounded-2xl">
-              <h3 className="font-display font-semibold text-primary mb-3 text-lg">Duration</h3>
-              <p className="text-muted-foreground font-body font-light">{caseStudyData.duration}</p>
+              <h3 className="font-display font-semibold text-primary mb-3 text-lg">{t('myholybooks.durationTitle')}</h3>
+              <p className="text-muted-foreground font-body font-light">{t('myholybooks.duration')}</p>
             </div>
             <div className="enhanced-glass p-6 rounded-2xl">
-              <h3 className="font-display font-semibold text-accent mb-3 text-lg">Role</h3>
-              <p className="text-muted-foreground font-body font-light">{caseStudyData.role}</p>
+              <h3 className="font-display font-semibold text-accent mb-3 text-lg">{t('myholybooks.roleTitle')}</h3>
+              <p className="text-muted-foreground font-body font-light">{t('myholybooks.role')}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Content Sections */}
       <section className={CASE_STUDY_STYLES.contentSection}>
         <div className="max-w-4xl mx-auto px-8 space-y-32">
-          {/* Overview */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
-            <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>Overview</h2>
-            <p className={CASE_STUDY_STYLES.typography.body}>{caseStudyData.overview}</p>
+            <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>{t('Overview')}</h2>
+            <p className={CASE_STUDY_STYLES.typography.body}>{t('myholybooks.overview')}</p>
           </div>
 
-          {/* Challenge */}
-         <div className={CASE_STUDY_STYLES.scrollReveal}>
+          <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              The Challenge
+              {t('myholybooks.challenge.title')}
             </h2>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-12`}>
-              {caseStudyData.challenge}
+              {t('myholybooks.challenge.content')}
             </p>
-            <p className={`${CASE_STUDY_STYLES.typography.body}`}><span className={`${CASE_STUDY_STYLES.typography.body} text-cyan-200`}>User Insight:</span> As a former student and after a chat with other students, I understand the need for a centralized, accessible platform for academic research. Together with the client (also a scholar) we could build a good idea of product.</p>
+            <p className={`${CASE_STUDY_STYLES.typography.body}`}>
+              <span className={`${CASE_STUDY_STYLES.typography.body} text-cyan-200`}>
+                {t('myholybooks.challenge.userInsight')}
+              </span> 
+              {t('myholybooks.challenge.userInsightText')}
+            </p>
             <div className="my-8"></div>
-            <p className={`${CASE_STUDY_STYLES.typography.body}`}><span className={`${CASE_STUDY_STYLES.typography.body} text-cyan-200`}>How Might We:</span> Create a community-centric platform that simplifies research sharing and enhances collaboration among scholars?</p>
-            
+            <p className={`${CASE_STUDY_STYLES.typography.body}`}>
+              <span className={`${CASE_STUDY_STYLES.typography.body} text-cyan-200`}>
+                {t('myholybooks.challenge.howMightWe')}
+              </span> 
+              {t('myholybooks.challenge.howMightWeText')}
+            </p>
           </div>
 
-          {/* Solution */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              {caseStudyData.solutionText}
+              {t('myholybooks.solution')}
             </h2>
             <div className="w-full rounded-3xl overflow-hidden mt-8">
               <img 
@@ -396,11 +346,9 @@ const MyHolyBooks = () => {
             </div>
           </div>
 
-          {/* Process */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
-            <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>Design Process</h2>
+            <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>{t('myholybooks.designProcess.title')}</h2>
             
-            {/* Process Overview Image */}
             <div className="w-full rounded-3xl overflow-hidden mb-16">
               <img 
                 src={Process_img} 
@@ -409,71 +357,67 @@ const MyHolyBooks = () => {
               />
             </div>
 
-            {/* Process Steps */}
             <div className="space-y-20">
-              {/* Empathize */}
+              {/* Empathize Phase */}
               <div className="border-l-2 border-border pl-12 relative enhanced-glass p-8 rounded-3xl">
                 <div className="absolute -left-3 top-8 w-6 h-6 bg-primary rounded-full"></div>
                 <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight tracking-tighter">
-                  Empathize
+                  {t('myholybooks.designProcess.empathize.title')}
                 </h3>
                 <p className={`${CASE_STUDY_STYLES.typography.body} mb-8`}>
-                  {caseStudyData.process[0].description}
+                  {t('myholybooks.designProcess.empathize.content')}
+                </p>
+                <p className={`${CASE_STUDY_STYLES.typography.body} mb-8`}>
+                  {t('myholybooks.designProcess.define.personaText')}
+                </p>
+                <ImageCarousel images={[Persona1, Persona2]} altPrefix="Persona" />
+              </div>
+
+              {/* Define Phase */}
+              <div className="border-l-2 border-border pl-12 relative enhanced-glass p-8 rounded-3xl">
+                <div className="absolute -left-3 top-8 w-6 h-6 bg-primary rounded-full"></div>
+                <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight tracking-tighter">
+                  {t('myholybooks.designProcess.define.title')}
+                </h3>
+                <p className={`${CASE_STUDY_STYLES.typography.body} mb-8`}>
+                  {t('myholybooks.designProcess.define.content')}
                 </p>
               </div>
 
-              {/* Define */}
+              {/* Ideate Phase */}
               <div className="border-l-2 border-border pl-12 relative enhanced-glass p-8 rounded-3xl">
                 <div className="absolute -left-3 top-8 w-6 h-6 bg-primary rounded-full"></div>
                 <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight tracking-tighter">
-                  Define
+                  {t('myholybooks.designProcess.ideate.title')}
                 </h3>
                 <p className={`${CASE_STUDY_STYLES.typography.body} mb-8`}>
-                  {caseStudyData.process[1].description}
-                </p>
-                <p className={`${CASE_STUDY_STYLES.typography.body} mb-8`}>
-                  {caseStudyData.process[1].personaText}
-                </p>
-                <ImageCarousel images={caseStudyData.process[1].personas} altPrefix="Persona" />
-              </div>
-
-              {/* Ideate */}
-              <div className="border-l-2 border-border pl-12 relative enhanced-glass p-8 rounded-3xl">
-                <div className="absolute -left-3 top-8 w-6 h-6 bg-primary rounded-full"></div>
-                <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight tracking-tighter">
-                  Ideate
-                </h3>
-                <p className={`${CASE_STUDY_STYLES.typography.body} mb-8`}>
-                  {caseStudyData.process[2].description}
+                  {t('myholybooks.designProcess.ideate.content')}
                 </p>
                 
-                {/* Two Cards Layout */}
                 <div className="flex flex-col gap-8">
-                  {/* Design Exploration Card */}
                   <div className="enhanced-glass p-6 rounded-2xl">
-                    <h4 className="font-display font-semibold text-lg mb-4">Design Exploration</h4>
+                    <h4 className="font-display font-semibold text-lg mb-4">{t('myholybooks.designProcess.ideate.designExploration')}</h4>
                     <ImageCarousel 
-                      images={caseStudyData.process[2].designExploration} 
+                      images={[Sketch, Style, Color]} 
                       altPrefix="Design exploration" 
                     />
                     <div className="mt-4 text-sm text-muted-foreground">
-                      Sketches, style exploration, and color palette development
+                      {t('myholybooks.designProcess.ideate.designExplorationSub')}
                     </div>
                   </div>
                   
-                  {/* Feature Exploration Card */}
                   <div className="enhanced-glass p-6 rounded-2xl">
-                    <h4 className="font-display font-semibold text-lg mb-4">Feature Exploration</h4>
+                    <h4 className="font-display font-semibold text-lg mb-4">{t('myholybooks.designProcess.ideate.featureExploration')}</h4>
                     <ImageCarousel 
-                      images={caseStudyData.process[2].featureExploration} 
+                      images={[Group_members, Languages]} 
                       altPrefix="Feature exploration" 
                     />
                     <div className="mt-4 space-y-4">
-                      {caseStudyData.process[2].featureExploration.map((_, index) => (
-                        <div key={index} className="border-t border-border/50 pt-4">
-                          <h5 className="font-display font-medium">{caseStudyData.process[2].featureTitles[index]}</h5>
+                      {featureTitlesArray.map((title, idx) => (
+                        <div key={idx} className="border-t border-border/50 pt-4">
+                          <h5 className="font-display font-medium">{title}</h5>
                           <p className="text-muted-foreground text-sm">
-                            {caseStudyData.process[2].featureDescriptions[index]}
+                            {featureDescriptionsArray[idx]}
                           </p>
                         </div>
                       ))}
@@ -482,63 +426,68 @@ const MyHolyBooks = () => {
                 </div>
               </div>
 
-              {/* Prototype */}
+              {/* Prototype Phase */}
               <div className="border-l-2 border-border pl-12 relative enhanced-glass p-8 rounded-3xl">
                 <div className="absolute -left-3 top-8 w-6 h-6 bg-primary rounded-full"></div>
                 <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight tracking-tighter">
-                  Prototype
+                  {t('myholybooks.designProcess.prototype.title')}
                 </h3>
                 <p className={`${CASE_STUDY_STYLES.typography.body} mb-8`}>
-                  {caseStudyData.process[3].description}
+                  {t('myholybooks.designProcess.prototype.content')}
                 </p>
                 <PrototypeTabs 
-                  webImage={caseStudyData.process[3].images[0]} 
-                  mobileImage={caseStudyData.process[3].images[1]} 
+                  webImage={Web_lofi_hifi} 
+                  mobileImage={Mobile_lofi_hifi} 
                 />
               </div>
 
-              {/* Test */}
+              {/* Test Phase */}
               <div className="border-l-2 border-border pl-12 relative enhanced-glass p-8 rounded-3xl">
                 <div className="absolute -left-3 top-8 w-6 h-6 bg-primary rounded-full"></div>
                 <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight tracking-tighter">
-                  Test
+                  {t('myholybooks.designProcess.test.title')}
                 </h3>
                 <p className={`${CASE_STUDY_STYLES.typography.body} mb-8`}>
-                  {caseStudyData.process[4].description}
+                  {t('myholybooks.designProcess.test.content')}
                 </p>
-                <ImageCarousel images={caseStudyData.process[4].testImages} altPrefix="Test feature" />
+                <ImageCarousel images={[Comment, Folders, Books, Add_friend]} altPrefix="Test feature" />
               </div>
             </div>
           </div>
 
-          {/* Final Product */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
-            <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>Final Product</h2>
+            <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>{t('myholybooks.finalProduct.title')}</h2>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-12`}>
-              {caseStudyData.finalProduct.description}
+              {t('myholybooks.finalProduct.content')}
             </p>
             <FinalProductTabs />
           </div>
 
-          {/* Results */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
-            <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>Results & Impact</h2>
+            <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>{t('myholybooks.results.title')}</h2>
             <div className="flex flex-col gap-8 mb-12">
-              {caseStudyData.results.map((result, index) => (
-                <div key={index} className="enhanced-glass p-8 rounded-2xl">
-                  <p className="text-xl font-body font-medium text-foreground">{result}</p>
+              {resultsArray.length > 0 ? (
+                resultsArray.map((result, index) => (
+                  <div key={index} className="enhanced-glass p-8 rounded-2xl">
+                    <p className="text-xl font-body font-medium text-foreground">{result}</p>
+                  </div>
+                ))
+              ) : (
+                <div className="enhanced-glass p-8 rounded-2xl">
+                  <p className="text-xl font-body font-medium text-foreground">
+                    {t('myholybooks.results.fallback')}
+                  </p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Next Project */}
       <section className={CASE_STUDY_STYLES.nextProjectSection}>
         <div className="max-w-4xl mx-auto px-8 text-center">
           <h2 className={`${CASE_STUDY_STYLES.typography.sectionTitle} ${CASE_STUDY_STYLES.scrollReveal}`}>
-            Next Project
+            {t('myholybooks.nextProject.title')}
           </h2>
           <Link 
             to="/case-study/p3m-platform" 
@@ -546,13 +495,13 @@ const MyHolyBooks = () => {
           >
             <div className={`${CASE_STUDY_STYLES.glassCard} p-12 hover:scale-105 transition-all duration-500`}>
               <h3 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6 group-hover:text-primary transition-colors leading-tight tracking-tighter">
-                P3M Platform Redesign
+                {t('myholybooks.nextProject.p3mPlatform')}
               </h3>
               <p className="text-muted-foreground mb-8 text-xl font-body font-light">
-                Enterprise project management platform
+                {t('myholybooks.nextProject.description')}
               </p>
               <div className="flex items-center justify-center space-x-3 text-primary group-hover:translate-x-2 transition-transform duration-300">
-                <span className="font-body font-medium text-lg">View case study</span>
+                <span className="font-body font-medium text-lg">{t('myholybooks.nextProject.viewCaseStudy')}</span>
                 <div className="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                   <span className="text-sm">→</span>
                 </div>
@@ -562,7 +511,6 @@ const MyHolyBooks = () => {
         </div>
       </section>
 
-      {/* Scroll to Top */}
       {showScrollTop && (
         <Button
           onClick={scrollToTop}

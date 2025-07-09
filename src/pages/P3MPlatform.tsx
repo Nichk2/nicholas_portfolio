@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUp, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import CASE_STUDY_STYLES from "@/components/CaseStudyTemplate";
 import Goal_1 from '../Image/P3M/Goals_img1.png';
@@ -17,6 +18,7 @@ import Result from '../Image/P3M/Result.png';
 import Logo from '../Image/P3M/logo.svg';
 
 const P3MPlatform = () => {
+  const { t } = useTranslation('p3mplatform');
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [activeTab, setActiveTab] = useState<"before" | "after">("before");
   useScrollReveal();
@@ -35,17 +37,17 @@ const P3MPlatform = () => {
   };
 
   const caseStudyData = {
-    title: "Plataforma P3M Redesign",
-    subtitle: "Redesign of a Brazilian governmental mining information platform to improve business decisions and regional development",
-    category: "WEB APP",
+    title: t("caseStudy.title"),
+    subtitle: t("caseStudy.subtitle"),
+    category: t("caseStudy.category"),
     year: "2023",
     client: "SGB - Serviço Geológico do Brasil",
     duration: "3 months",
     role: "UX/UI Designer",
-    overview: "The P3M Platform is a Brazilian governmental tool that provides information and knowledge about the mining process to improve business decisions in the sector and promote regional development.",
-    problem: "Our stakeholders wanted to implement several changes on the platform's design, especially from ideas that they managed to gather from other platforms with the same service. Those platforms provide those same services differently, however, with a greater level of usability (according with the stakeholders). Taking into account that context, they decided to change the platform adding some features trying to use the maximum as possible what was developed earlier, thus changing the design partially not totally.",
-    goal: "We have decided to implement new elements and features to the platform but trying to respect great part of the design of P3M. In order to do so, we conducted research other platforms that have the same objective like SARIG from Australia 🇦🇺, Jazida from Brazil 🇧🇷 and SIGEOM from Canada 🇨🇦.",
-    results: "According to the team responsible for requesting our work, many at the institution approved our design and felt a significant improvement in the user experience. Our redesign also facilitated the new implementations that are to come on the new platform."
+    overview: t("caseStudy.overview"),
+    problem: t("caseStudy.problem"),
+    goal: t("caseStudy.goal"),
+    results: t("caseStudy.resultsText")
   };
 
   return (
@@ -59,7 +61,7 @@ const P3MPlatform = () => {
               className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors duration-300 font-body"
             >
               <ChevronLeft className="w-5 h-5" />
-              <span>Back to portfolio</span>
+              <span>{t("backToPortfolio")}</span>
             </Link>
 
             <Link
@@ -98,7 +100,7 @@ const P3MPlatform = () => {
           <div className={`grid md:grid-cols-4 gap-8 text-center md:text-left ${CASE_STUDY_STYLES.scrollReveal}`}>
             <div className="enhanced-glass p-6 rounded-2xl">
               <h3 className="font-display font-semibold text-primary mb-3 text-lg">
-                Client
+                {t("caseStudy.client")}
               </h3>
               <p className="text-muted-foreground font-body font-light">
                 {caseStudyData.client}
@@ -106,7 +108,7 @@ const P3MPlatform = () => {
             </div>
             <div className="enhanced-glass p-6 rounded-2xl">
               <h3 className="font-display font-semibold text-accent mb-3 text-lg">
-                Year
+                {t("caseStudy.year")}
               </h3>
               <p className="text-muted-foreground font-body font-light">
                 {caseStudyData.year}
@@ -114,7 +116,7 @@ const P3MPlatform = () => {
             </div>
             <div className="enhanced-glass p-6 rounded-2xl">
               <h3 className="font-display font-semibold text-primary mb-3 text-lg">
-                Duration
+                {t("caseStudy.duration")}
               </h3>
               <p className="text-muted-foreground font-body font-light">
                 {caseStudyData.duration}
@@ -122,7 +124,7 @@ const P3MPlatform = () => {
             </div>
             <div className="enhanced-glass p-6 rounded-2xl">
               <h3 className="font-display font-semibold text-accent mb-3 text-lg">
-                Role
+                {t("caseStudy.role")}
               </h3>
               <p className="text-muted-foreground font-body font-light">
                 {caseStudyData.role}
@@ -138,7 +140,7 @@ const P3MPlatform = () => {
           {/* Overview */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              Overview
+              {t("caseStudy.title1")}
             </h2>
             <p className={CASE_STUDY_STYLES.typography.body}>
               {caseStudyData.overview}
@@ -148,7 +150,7 @@ const P3MPlatform = () => {
           {/* Problem */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              The Problem
+              {t("caseStudy.title2")}
             </h2>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-6`}>
               {caseStudyData.problem}
@@ -158,7 +160,7 @@ const P3MPlatform = () => {
           {/* Goal */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              The Goal
+              {t("caseStudy.title3")}
             </h2>
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-6`}>
               {caseStudyData.goal}
@@ -168,14 +170,16 @@ const P3MPlatform = () => {
             <div className={`w-full ${CASE_STUDY_STYLES.glassCard} p-6 mt-8`}>
               <img src={Goal_1} alt="Original P3M Platform Screens" className="w-full rounded-lg" />
               <p className="text-muted-foreground mt-4 text-center font-body">
-                Above are the screens of the older version of P3M. The first one demonstrates layers are presented to the user, and the second one shows cards that represent elements to choose so you can active the layer. The set of images below will show the changes applied after meetings with client and the team. The left image is the old version while the right one shows the new look.
+                {t("caseStudy.originalScreensDescription")}
               </p>
             </div>
           </div>
 
           {/* Second Goal - Layers Section Redesign */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
-            <h3 className="text-2xl font-display font-bold mb-6">Layers Section Redesign</h3>
+            <h3 className="text-2xl font-display font-bold mb-6">
+              {t("caseStudy.layersRedesign")}
+            </h3>
             
             <div className="relative w-full overflow-hidden rounded-2xl enhanced-glass">
               <div className="flex border-b border-border/20">
@@ -187,7 +191,7 @@ const P3MPlatform = () => {
                   }`}
                   onClick={() => setActiveTab("before")}
                 >
-                  Before
+                  {t("caseStudy.before")}
                 </button>
                 <button
                   className={`flex-1 py-4 font-display font-medium transition-colors ${
@@ -197,7 +201,7 @@ const P3MPlatform = () => {
                   }`}
                   onClick={() => setActiveTab("after")}
                 >
-                  After
+                  {t("caseStudy.after")}
                 </button>
               </div>
               <div className="relative h-[500px] w-full flex items-center justify-center p-6">
@@ -209,15 +213,16 @@ const P3MPlatform = () => {
                 </div>
               </div>
               <p className="text-muted-foreground mt-4 text-center p-4 font-body">
-              The image above shows the changes applied by our team during the project. We made an treeview at the Layers section, moved some features to it, and we built a better navigation flow at the top of the treeview. The menu that contains action icons at the right of the treeview did not receive changes due the client's orientation.
-            </p>
+                {t("caseStudy.layersDescription")}
+              </p>
             </div>
-            
           </div>
 
           {/* Third Goal - Commodity Cards Redesign */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
-            <h3 className="text-2xl font-display font-bold mb-6">Commodity Cards Redesign</h3>
+            <h3 className="text-2xl font-display font-bold mb-6">
+              {t("caseStudy.commodityCards")}
+            </h3>
             
             <div className="relative w-full overflow-hidden rounded-2xl enhanced-glass">
               <div className="flex border-b border-border/20">
@@ -229,7 +234,7 @@ const P3MPlatform = () => {
                   }`}
                   onClick={() => setActiveTab("before")}
                 >
-                  Before
+                  {t("caseStudy.before")}
                 </button>
                 <button
                   className={`flex-1 py-4 font-display font-medium transition-colors ${
@@ -239,7 +244,7 @@ const P3MPlatform = () => {
                   }`}
                   onClick={() => setActiveTab("after")}
                 >
-                  After
+                  {t("caseStudy.after")}
                 </button>
               </div>
               <div className="relative h-[500px] w-full flex items-center justify-center p-6">
@@ -251,63 +256,70 @@ const P3MPlatform = () => {
                 </div>
               </div>
               <p className="text-muted-foreground mt-4 p-4 text-center font-body">
-              The image above shows the changes applied on the elements cards. We made separated section and divided into "Principais Commodities" translated to english → "Main Commodities". We applied a lighter background, alterations on the cards design with addition of more colors for each commodity in order to increase more positive energy to the platform and externalize differences among the commodities.
-            </p>
+                {t("caseStudy.commodityDescription")}
+              </p>
             </div>
-            
           </div>
 
           {/* Fourth Goal - Menu Relocation */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
-            <h3 className="text-2xl font-display font-bold mb-6">Menu Simplification</h3>
+            <h3 className="text-2xl font-display font-bold mb-6">
+              {t("caseStudy.menuSimplification")}
+            </h3>
             
             <div className={`w-full ${CASE_STUDY_STYLES.glassCard} p-6`}>
               <img src={Goal_4} alt="Menu Relocation Changes" className="w-full rounded-lg" />
               <p className="text-muted-foreground mt-4 text-center font-body">
-                Another basic change that is crucial to mention is the relocation the team did with some icons from the older bottom menu and add "Institucional" section for the user as the image above shows. In order to improve and facilitate the user's flow and decision making, the idea of turning the bottom menu simpler by relocating elements to the treeview caught the client's attention. LESS, sometimes, is a PLUS.
+                {t("caseStudy.menuDescription")}
               </p>
             </div>
           </div>
 
           {/* Fifth Goal - New Dashboard Sections */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
-            <h3 className="text-2xl font-display font-bold mb-6">New Dashboard Sections</h3>
+            <h3 className="text-2xl font-display font-bold mb-6">
+              {t("caseStudy.newDashboard")}
+            </h3>
             
             <div className={`w-full ${CASE_STUDY_STYLES.glassCard} p-6`}>
               <img src={Goal_5} alt="New Dashboard Sections" className="w-full rounded-lg" />
               <p className="text-muted-foreground mt-4 text-center font-body">
-                Both of the images above shows a new addition we had the freedom to show to the client. They are sections with some dashboards and cards. The first image is a detailed screen of a specific element (Gold in this case) and the other is about a specific study of a region in Brazil. We chose to use cards and play with some formats to add more dynamism, and we used soft colors to maintain cleanness.
+                {t("caseStudy.dashboardDescription")}
               </p>
             </div>
           </div>
 
           {/* Quick Search Redesign */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
-            <h3 className="text-2xl font-display font-bold mb-6">Quick Search Redesign</h3>
+            <h3 className="text-2xl font-display font-bold mb-6">
+              {t("caseStudy.quickSearch")}
+            </h3>
             
             <div className={`w-full ${CASE_STUDY_STYLES.glassCard} p-6 mb-4`}>
               <img src={Goal_5_1} alt="Quick Search Before" className="w-full rounded-lg" />
               <p className="text-muted-foreground mt-4 text-center font-body">
-                Another important alteration was the "Busca Rápida" - translated to english "Quick Search" - actions and design. While this one (the older) was a little bit disconnected with the platform according with the client, we worked on a new one in order to promote more connection with the platform. You can see in the next image.
+                {t("caseStudy.quickSearchBefore")}
               </p>
             </div>
             
             <div className={`w-full ${CASE_STUDY_STYLES.glassCard} p-6`}>
               <img src={Goal_5_2} alt="Quick Search After" className="w-full rounded-lg" />
               <p className="text-muted-foreground mt-4 text-center font-body">
-                We added two buttons, one for general search - the first one from the left to right - and another button that will open the modal of the second image.
+                {t("caseStudy.quickSearchAfter")}
               </p>
             </div>
           </div>
 
           {/* Final Result */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
-            <h3 className="text-2xl font-display font-bold mb-6">Final Homepage Redesign</h3>
+            <h3 className="text-2xl font-display font-bold mb-6">
+              {t("caseStudy.finalHomepage")}
+            </h3>
             
             <div className='w-full p-6'>
               <img src={Result} alt="Final Homepage Design" className="w-full rounded-lg" />
               <p className="text-muted-foreground mt-10 text-center font-body">
-                The "Home" of the first version was limited to show only the cards of "Conhecimento Geocientífico"- translated to english "Geoscientific Knowledge" - this one was relocated for the small section called "Explorar mapa por categoria" - translated to english "Explore map by category" - the team thought that would be interesting to make a separated section and inserted "Principais Commodities" at the beginning, since the client wanted to highlight it for the user. The image above is the result of our work.
+                {t("caseStudy.finalDescription")}
               </p>
             </div>
           </div>
@@ -315,7 +327,7 @@ const P3MPlatform = () => {
           {/* Results */}
           <div className={CASE_STUDY_STYLES.scrollReveal}>
             <h2 className={CASE_STUDY_STYLES.typography.sectionTitle}>
-              Results
+              {t("caseStudy.results")}
             </h2>
             <div className="enhanced-glass p-8 rounded-2xl">
               <p className="text-xl font-body font-medium text-foreground">
@@ -330,7 +342,7 @@ const P3MPlatform = () => {
       <section className={CASE_STUDY_STYLES.nextProjectSection}>
         <div className="max-w-4xl mx-auto px-8 text-center">
           <h2 className={`${CASE_STUDY_STYLES.typography.sectionTitle} ${CASE_STUDY_STYLES.scrollReveal}`}>
-            Next Project
+            {t("nextProject")}
           </h2>
           <Link
             to="/case-study/hybras-collab"
@@ -341,11 +353,11 @@ const P3MPlatform = () => {
                 HYBRAS COLLAB
               </h3>
               <p className="text-muted-foreground mb-8 text-xl font-body font-light">
-                Research collaboration platform for hydrology studies
+                {t("caseStudy.descriptionLabel")}
               </p>
               <div className="flex items-center justify-center space-x-3 text-primary group-hover:translate-x-2 transition-transform duration-300">
                 <span className="font-body font-medium text-lg">
-                  View case study
+                  {t("viewCaseStudy")}
                 </span>
                 <div className="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                   <span className="text-sm">→</span>

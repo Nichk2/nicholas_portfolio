@@ -1,59 +1,49 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import photox_thumbnail from '../Image/PHOTOX/MAPA.png';
 import Hybras_logo from "../Image/HYBRAS/thumbnaill_hybras.png";
-import MyHolyBooks_logo from '../Image/MyHolyBooks/thumbnaill.svg'
-import AwesomeGames_logo from '../Image/AwesomeGames/thumbnaill_awesomegames.png'
-import P3M_logo from '../Image/P3M/thumbnaill.png'
-
+import MyHolyBooks_logo from '../Image/MyHolyBooks/thumbnaill.svg';
+import AwesomeGames_logo from '../Image/AwesomeGames/thumbnaill_awesomegames.png';
+import P3M_logo from '../Image/P3M/thumbnaill.png';
 
 const Portfolio = () => {
+  const { t } = useTranslation('portfolio');
+
   const projects = [
     {
       id: 1,
-      title: "PHOTOX",
-      subtitle: "Carbon Tax and NFT platform",
-      year: "2024",
-      category: "WEB APP",
       slug: "photox",
-      logo: photox_thumbnail
+      logo: photox_thumbnail,
+      year: "2024"
     },
     {
       id: 2,
-      title: "MyHolyBooks",
-      subtitle: "Christian social netwrok",
-      year: "2024", 
-      category: "WEB AND MOBILE",
       slug: "myholybooks",
-      logo: MyHolyBooks_logo
+      logo: MyHolyBooks_logo,
+      year: "2024"
     },
     {
       id: 3,
-      title: "HYBRAS COLLAB",
-      subtitle: "Hydrology research repository for scholars",
-      year: "2023",
-      category: "WEB APP",
       slug: "hybras-collab",
-      logo: Hybras_logo
+      logo: Hybras_logo,
+      year: "2023"
     },
     {
       id: 4,
-      title: "P3M Platform Redesign",
-      subtitle: "Natural resources map platform",
-      year: "2023",
-      category: "WEB APP",
       slug: "p3m-platform",
-      logo: P3M_logo
+      logo: P3M_logo,
+      year: "2023"
     },
     {
       id: 5,
-      title: "AwesomeGames",
-      subtitle: "Gaming preview app",
-      year: "2022",
-      category: "MOBILE APP",
       slug: "awesomegames",
-      logo: AwesomeGames_logo
-    },
-  ];
+      logo: AwesomeGames_logo,
+      year: "2022"
+    }
+  ].map(project => ({
+    ...project,
+    ...t(`projects.${project.slug}`, { returnObjects: true })
+  }));
 
   return (
     <section id="portfolio" className="py-32 bg-secondary/30 relative z-10">
@@ -61,26 +51,23 @@ const Portfolio = () => {
         {/* Section Header */}
         <div className="mb-24 scroll-reveal">
           <h2 className="text-6xl md:text-8xl font-display font-bold text-foreground mb-12 leading-tight tracking-tighter">
-            Selected Work
+            {t('header.title')}
           </h2>
           <p className="text-xl md:text-3xl mb-20 text-muted-foreground max-w-4xl font-body font-light leading-relaxed">
-            A curated collection of projects that showcase my approach to solving complex design challenges 
-            and creating <span className="text-primary font-medium">meaningful user experiences</span> that drive results.
+            {t('header.description.base')}{" "}
+            <span className="text-primary font-medium">
+              {t('header.description.highlight')}
+            </span>{" "}
+            {t('header.description.suffix')}
           </p>
         </div>
 
         {/* Projects Grid */}
         <div className="flex flex-col gap-32">
           {projects.map((project, index) => (
-            <div 
-              key={project.id}
-              className="scroll-reveal"
-            >
-              <Link 
-                to={`/case-study/${project.slug}`}
-                className="group block"
-              >
-                <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div key={project.id} className="scroll-reveal">
+              <Link to={`/case-study/${project.slug}`} className="group block">
+                <div className=" grid  mb-20 lg:grid-cols-2 lg:gap-20  items-center">
                   {/* Project Visual */}
                   <div className={`${index % 2 === 0 ? 'order-1' : 'order-2'}`}>
                     <div className="w-full h-[500px] rounded-3xl transition-all duration-700 overflow-hidden relative group-hover:scale-[1.02]">
@@ -96,7 +83,7 @@ const Portfolio = () => {
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center">
                           <p className="text-muted-foreground text-xl font-body">
-                            Add {project.title} visual here
+                            {t('ui.missingVisual', { project: project.title })}
                           </p>
                         </div>
                       )}
@@ -120,7 +107,7 @@ const Portfolio = () => {
                     </p>
                     
                     <div className="flex items-center space-x-3 text-primary group-hover:translate-x-4 transition-all duration-500 mt-8">
-                      <span className="font-body font-medium text-lg">Explore Project</span>
+                      <span className="font-body font-medium text-lg">{t('ui.explore')}</span>
                       <div className="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                         <span className="text-sm">→</span>
                       </div>
