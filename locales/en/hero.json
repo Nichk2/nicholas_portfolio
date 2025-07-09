@@ -1,0 +1,14 @@
+{
+  "title": "Nicholas",
+  "subtitle": "UI/UX Designer",
+  "subtitle2": "junior frontend dev too...",
+  "description": {
+    "base": "Crafting digital experiences that seamlessly blend",
+    "highlight1": "innovation",
+    "highlight2": "aesthetics",
+    "highlight3": "user-centricity"
+  },
+  "scrollIndicator": {
+    "ariaLabel": "Scroll to portfolio section"
+  }
+}
