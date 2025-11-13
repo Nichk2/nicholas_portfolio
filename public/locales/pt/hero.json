@@ -1,0 +1,14 @@
+{
+  "title": "Nicholas",
+  "subtitle": "Designer UI/UX",
+  "subtitle2": "frontend developer",
+  "description": {
+    "base": "Criando experiências digitais que combinam perfeitamente",
+    "highlight1": "inovação",
+    "highlight2": "estética",
+    "highlight3": "foco no usuário"
+  },
+  "scrollIndicator": {
+    "ariaLabel": "Rolar para a seção de portfólio"
+  }
+}

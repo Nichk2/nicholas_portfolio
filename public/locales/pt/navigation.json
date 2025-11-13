@@ -1,0 +1,15 @@
+{
+  "links": {
+    "about": "Sobre mim",
+    "work": "Trabalhos",
+    "contact": "Contato"
+  },
+  "buttons": {
+    "getInTouch": "Fale comigo",
+    "language": {
+      "en": "Inglês",
+      "pt": "Português",
+      "ariaLabel": "Mudar idioma"
+    }
+  }
+}

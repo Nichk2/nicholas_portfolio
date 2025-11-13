@@ -1,0 +1,62 @@
+{
+  "title": "eu.",
+  "paragraphs": {
+    "intercultural": {
+      "base": "Com formação em estudos internacionais e experiência estudando no exterior, trago uma profunda compreensão sobre",
+      "highlight": "colaboração intercultural",
+      "suffix": ". Comunico-me bem com stakeholders e prospero em equipes diversas e multifuncionais."
+    },
+    "data": {
+      "base": "Trabalho confortavelmente com",
+      "highlight": "dados qualitativos e quantitativos",
+      "suffix": ", transformando insights em experiências de usuário intuitivas. Também estou acostumado a gerenciar múltiplos projetos, o que aprimora minha adaptabilidade e habilidades de gestão de tempo."
+    },
+    "technical": {
+      "base": "Continuo desenvolvendo meu conjunto de habilidades técnicas. Minhas ferramentas atuais incluem",
+      "tools": ["Figma", "Adobe XD"],
+      "coding": "e um conhecimento crescente em",
+      "languages": "HTML5, CSS3, JavaScript e React",
+      "suffix": "."
+    },
+    "approach": {
+      "text": "Abordo cada projeto com comprometimento, criatividade e mentalidade orientada a resultados — sempre buscando entregar valor tanto para usuários quanto para negócios."
+    },
+    "design": {
+      "base": "Acredito que um design excepcional deve parecer simples — resolvendo problemas complexos enquanto cria",
+      "highlight": "experiências genuinamente encantadoras",
+      "suffix": "."
+    }
+  },
+  "skills": {
+    "design": {
+      "title": "Design",
+      "items": [
+        "UI/UX Design",
+        "Design Visual",
+        "Prototipagem",
+        "Design Systems",
+        "Entusiasta FrontEnd"
+      ]
+    },
+    "research": {
+      "title": "Pesquisa",
+      "items": [
+        "Pesquisa de Usuário",
+        "Testes de Usabilidade",
+        "Estratégia",
+        "Análise de Dados"
+      ]
+    }
+  },
+  "contact": {
+    "button": "Entre em Contato"
+  },
+  "footer": {
+    "copyright": {
+      "base": "© 2025",
+      "name": "Nicholas Andrade",
+      "rights": "Todos os direitos reservados."
+    },
+    "phone": "+55 12 98119-8452"
+  }
+}
