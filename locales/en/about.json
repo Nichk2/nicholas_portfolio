@@ -46,6 +46,17 @@
         "Strategy",
         "Data Analysis"
       ]
+    },
+    "ai": {
+      "title": "AI",
+      "items": [
+        "LoRA/QLoRA",
+        "Fine-Tuning and model adaptation",
+        "Retrieval-Augmented Generation (RAG)",
+        "Quantization",
+        "Agentic Workflows",
+        "LangChain and Python for AI development"
+      ]
     }
   },
   "contact": {
