@@ -2,28 +2,28 @@
   "title": "eu.",
   "paragraphs": {
     "intercultural": {
-      "base": "Com formação em estudos internacionais e experiência estudando no exterior, trago uma profunda compreensão sobre",
+      "base": "Com formação em estudos internacionais e experiência prática no Canadá, trago uma forte compreensão sobre",
       "highlight": "colaboração intercultural",
-      "suffix": ". Comunico-me bem com stakeholders e prospero em equipes diversas e multifuncionais."
+      "suffix": ". Comunico-me com clareza com desenvolvedores, stakeholders e equipes do setor público, atuando bem em ambientes diversos e multifuncionais."
     },
     "data": {
       "base": "Trabalho confortavelmente com",
       "highlight": "dados qualitativos e quantitativos",
-      "suffix": ", transformando insights em experiências de usuário intuitivas. Também estou acostumado a gerenciar múltiplos projetos, o que aprimora minha adaptabilidade e habilidades de gestão de tempo."
+      "suffix": ", transformando insights em experiências acessíveis e intuitivas. Estou acostumado a gerenciar múltiplos projetos ao mesmo tempo, o que aprimora minha adaptabilidade e organização."
     },
     "technical": {
-      "base": "Continuo desenvolvendo meu conjunto de habilidades técnicas. Minhas ferramentas atuais incluem",
-      "tools": ["Figma", "Adobe XD"],
-      "coding": "e um conhecimento crescente em",
-      "languages": "HTML5, CSS3, JavaScript e React",
+      "base": "Estou constantemente expandindo meu conjunto de habilidades técnicas. Minhas ferramentas atuais incluem",
+      "tools": ["Figma"],
+      "coding": "e sólido conhecimento em",
+      "languages": "HTML5, CSS3, JavaScript, React e React Native, além de experiência crescente em Python e engenharia de IA (LoRA/QLoRA, Fine-Tuning, RAG, Quantização)",
       "suffix": "."
     },
     "approach": {
-      "text": "Abordo cada projeto com comprometimento, criatividade e mentalidade orientada a resultados — sempre buscando entregar valor tanto para usuários quanto para negócios."
+      "text": "Abordo cada projeto com comprometimento, criatividade e uma mentalidade orientada a resultados — buscando entregar soluções que gerem valor real para usuários e negócios."
     },
     "design": {
       "base": "Acredito que um design excepcional deve parecer simples — resolvendo problemas complexos enquanto cria",
-      "highlight": "experiências genuinamente encantadoras",
+      "highlight": "experiências incríveis",
       "suffix": "."
     }
   },
@@ -35,7 +35,7 @@
         "Design Visual",
         "Prototipagem",
         "Design Systems",
-        "Entusiasta FrontEnd"
+        "Conhecimento em Front-End"
       ]
     },
     "research": {
