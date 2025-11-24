@@ -2,24 +2,24 @@
   "title": "me.",
   "paragraphs": {
     "intercultural": {
-      "base": "With a background in international studies and experience studying abroad, I bring a deep understanding of",
+      "base": "With a background in international studies and hands-on experience in Canada, I bring a deep understanding of",
       "highlight": "intercultural collaboration",
-      "suffix": ". I communicate well with stakeholders and thrive in diverse, cross-functional teams."
+      "suffix": ". I communicate effectively with developers, stakeholders, and public sector teams, thriving in diverse, cross-functional environments."
     },
     "data": {
       "base": "I work comfortably with both",
       "highlight": "qualitative and quantitative data",
-      "suffix": ", transforming insights into intuitive user experiences. I'm also used to juggling multiple projects, which sharpens my adaptability and time management skills."
+      "suffix": ", transforming insights into intuitive and accessible user experiences. I’m used to managing multiple projects at once, which strengthens my adaptability and time management."
     },
     "technical": {
-      "base": "I continuously build my technical toolkit. My current stack includes",
-      "tools": ["Figma", "Adobe XD"],
-      "coding": "and a growing fluency in",
-      "languages": "HTML5, CSS3, JavaScript, and React",
+      "base": "I continuously expand my technical toolkit. My current stack includes",
+      "tools": ["Figma"],
+      "coding": "and strong knowledge of",
+      "languages": "HTML5, CSS3, JavaScript (Typescript), React, and React Native, along with growing experience in Python and AI engineering (LoRA/QLoRA, Fine-Tuning, RAG, Quantization)",
       "suffix": "."
     },
     "approach": {
-      "text": "I approach every project with commitment, creativity, and a results-driven mindset — always aiming to deliver outcomes that create value for both users and businesses."
+      "text": "I approach every project with commitment, creativity, and a results-driven mindset — aiming to deliver solutions that create meaningful value for both users and businesses."
     },
     "design": {
       "base": "I believe exceptional design should feel effortless — solving complex problems while creating",
@@ -35,7 +35,7 @@
         "Visual Design",
         "Prototyping",
         "Design Systems",
-        "FrontEnd Enthusiast"
+        "Front-End Knowledge"
       ]
     },
     "research": {
@@ -44,7 +44,7 @@
         "User Research",
         "Usability Testing",
         "Strategy",
-        "Analytics"
+        "Data Analysis"
       ]
     }
   },
