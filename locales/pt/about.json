@@ -46,6 +46,17 @@
         "Estratégia",
         "Análise de Dados"
       ]
+    },
+    "ai": {
+      "title": "IA",
+      "items": [
+        "LoRA/QLoRA",
+        "Fine-Tuning e adaptação de modelo",
+        "Retrieval-Augmented Generation (RAG)",
+        "Quantization",
+        "Fluxo de Agentes",
+        "LangChain e Python para IA"
+      ]
     }
   },
   "contact": {
