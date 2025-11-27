@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import Navigation from "../components/Navigation";
 import CASE_STUDY_STYLES from "@/components/CaseStudyTemplate";
 import me from "../Nicholas.jpg";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const About = () => {
-  const { t } = useTranslation('about');
+  const { t } = useTranslation("about");
 
   return (
     <div className={CASE_STUDY_STYLES.background}>
@@ -24,21 +24,22 @@ const About = () => {
                 transition={{ duration: 0.6 }}
                 className={`${CASE_STUDY_STYLES.typography.mainTitle} mb-16`}
               >
-                {t('title')}
+                {t("title")}
               </motion.h2>
 
               <div className="space-y-8 leading-relaxed">
+                {/* Your existing paragraphs */}
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                   className={CASE_STUDY_STYLES.typography.body}
                 >
-                  {t('paragraphs.intercultural.base')}{" "}
+                  {t("paragraphs.intercultural.base")}{" "}
                   <span className="text-primary font-medium">
-                    {t('paragraphs.intercultural.highlight')}
+                    {t("paragraphs.intercultural.highlight")}
                   </span>
-                  {t('paragraphs.intercultural.suffix')}
+                  {t("paragraphs.intercultural.suffix")}
                 </motion.p>
 
                 <motion.p
@@ -47,11 +48,11 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.5 }}
                   className={CASE_STUDY_STYLES.typography.body}
                 >
-                  {t('paragraphs.data.base')}{" "}
+                  {t("paragraphs.data.base")}{" "}
                   <span className="text-accent font-medium">
-                    {t('paragraphs.data.highlight')}
+                    {t("paragraphs.data.highlight")}
                   </span>
-                  {t('paragraphs.data.suffix')}
+                  {t("paragraphs.data.suffix")}
                 </motion.p>
 
                 <motion.p
@@ -60,19 +61,16 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className={CASE_STUDY_STYLES.typography.body}
                 >
-                  {t('paragraphs.technical.base')}{" "}
+                  {t("paragraphs.technical.base")}{" "}
                   <span className="text-primary font-medium">
-                    {t('paragraphs.technical.tools.0')}
+                    {t("paragraphs.technical.tools.0")}
                   </span>
-                  ,{" "}
+      
+                  , {t("paragraphs.technical.coding")}{" "}
                   <span className="text-primary font-medium">
-                    {t('paragraphs.technical.tools.1')}
+                    {t("paragraphs.technical.languages")}
                   </span>
-                  , {t('paragraphs.technical.coding')}{" "}
-                  <span className="text-primary font-medium">
-                    {t('paragraphs.technical.languages')}
-                  </span>
-                  {t('paragraphs.technical.suffix')}
+                  {t("paragraphs.technical.suffix")}
                 </motion.p>
 
                 <motion.p
@@ -81,7 +79,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.7 }}
                   className={CASE_STUDY_STYLES.typography.body}
                 >
-                  {t('paragraphs.approach.text')}
+                  {t("paragraphs.approach.text")}
                 </motion.p>
 
                 <motion.p
@@ -90,11 +88,11 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.8 }}
                   className={CASE_STUDY_STYLES.typography.body}
                 >
-                  {t('paragraphs.design.base')}{" "}
+                  {t("paragraphs.design.base")}{" "}
                   <span className="text-accent font-medium">
-                    {t('paragraphs.design.highlight')}
+                    {t("paragraphs.design.highlight")}
                   </span>
-                  {t('paragraphs.design.suffix')}
+                  {t("paragraphs.design.suffix")}
                 </motion.p>
               </div>
 
@@ -105,32 +103,134 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20"
               >
+                {/* Design Skills */}
                 <div className={`${CASE_STUDY_STYLES.glassCard} p-6 rounded-2xl`}>
                   <h3 className="font-display font-semibold text-primary mb-6 text-xl">
-                    {t('skills.design.title')}
+                    Design
                   </h3>
                   <ul className="text-muted-foreground space-y-3 font-body">
-                    {(t('skills.design.items', { returnObjects: true }) as string[]).map((skill, index) => (
+                    {[
+                      "UI/UX Design",
+                      "Visual Design",
+                      "Prototyping",
+                      "Design Systems",
+                      "Front-End Knowledge"
+                    ].map((skill, index) => (
                       <li key={index} className="flex items-center space-x-3">
-                        <span className={`w-2 h-2 rounded-full ${index % 2 === 0 ? "bg-primary" : "bg-accent"}`}></span>
+                        <span
+                          className={`w-2 h-2 rounded-full ${
+                            index % 2 === 0 ? "bg-primary" : "bg-accent"
+                          }`}
+                        ></span>
                         <span>{skill}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
+                {/* Research Skills */}
                 <div className={`${CASE_STUDY_STYLES.glassCard} p-6 rounded-2xl`}>
                   <h3 className="font-display font-semibold text-accent mb-6 text-xl">
-                    {t('skills.research.title')}
+                    Research
                   </h3>
                   <ul className="text-muted-foreground space-y-3 font-body">
-                    {(t('skills.research.items', { returnObjects: true }) as string[]).map((skill, index) => (
+                    {[
+                      "User Research",
+                      "Usability Testing",
+                      "Strategy",
+                      "Data Analysis"
+                    ].map((skill, index) => (
                       <li key={index} className="flex items-center space-x-3">
-                        <span className={`w-2 h-2 rounded-full ${index % 2 === 0 ? "bg-accent" : "bg-primary"}`}></span>
+                        <span
+                          className={`w-2 h-2 rounded-full ${
+                            index % 2 === 0 ? "bg-accent" : "bg-primary"
+                          }`}
+                        ></span>
                         <span>{skill}</span>
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                {/* AI Skills with Neon Stroke - Wider Box */}
+                <div className="relative col-span-1 md:col-span-2"> {/* This makes it full width */}
+                  <motion.div
+                    className={`relative p-6 rounded-2xl ${CASE_STUDY_STYLES.glassCard}`}
+                  >
+                    {/* Neon Stroke Animation */}
+                    <motion.div
+                      className="absolute inset-0 rounded-2xl pointer-events-none"
+                      style={{
+                        padding: '2px',
+                        background: 'linear-gradient(90deg, #00f2fe, #4facfe, #00f2fe)',
+                        backgroundSize: '200% 100%',
+                        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                        WebkitMaskComposite: 'xor',
+                        maskComposite: 'exclude',
+                      }}
+                      animate={{
+                        backgroundPosition: ['0% 0%', '200% 0%'],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    />
+                    
+                    {/* Inner content */}
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-3 mb-6">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="text-accent"
+                        >
+                          <path
+                            d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z"
+                            fill="currentColor"
+                            opacity="0.8"
+                          ></path>
+                          <path
+                            d="M19 14L19.75 16.25L22 17L19.75 17.75L19 20L18.25 17.75L16 17L18.25 16.25L19 14Z"
+                            fill="currentColor"
+                            opacity="0.6"
+                          ></path>
+                          <path
+                            d="M7 3L7.5 4.5L9 5L7.5 5.5L7 7L6.5 5.5L5 5L6.5 4.5L7 3Z"
+                            fill="currentColor"
+                            opacity="0.6"
+                          ></path>
+                        </svg>
+                        <h3 className="font-display font-semibold text-accent text-xl">
+                          AI
+                        </h3>
+                      </div>
+                      
+                      <ul className="text-muted-foreground space-y-3 font-body">
+                        {[
+                          "LoRA/QLoRA",
+                          "Fine-Tuning and model adaptation",
+                          "Retrieval-Augmented Generation (RAG)",
+                          "Quantization",
+                          "Agentic Workflows",
+                          "LangChain and Python for AI development"
+                        ].map((skill, index) => (
+                          <li key={index} className="flex items-center space-x-3">
+                            <span
+                              className={`w-2 h-2 rounded-full ${
+                                index % 2 === 0 ? "bg-accent" : "bg-primary"
+                              }`}
+                            ></span>
+                            <span>{skill}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
                 </div>
               </motion.div>
 
@@ -146,7 +246,7 @@ const About = () => {
                   className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  {t('contact.button')}
+                  {t("contact.button")}
                 </a>
               </motion.div>
             </div>
@@ -158,7 +258,9 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="order-1 lg:order-2"
             >
-              <div className={`w-full h-[700px] ${CASE_STUDY_STYLES.glassCard} rounded-3xl flex items-center justify-center overflow-hidden`}>
+              <div
+                className={`w-full h-[700px] ${CASE_STUDY_STYLES.glassCard} rounded-3xl flex items-center justify-center overflow-hidden`}
+              >
                 <img
                   src={me}
                   alt="me"
@@ -177,13 +279,13 @@ const About = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex flex-col">
               <p className="text-muted-foreground font-body text-lg">
-                {t('footer.copyright.base')}{" "}
-                <span className="text-primary font-semibold">{t('footer.copyright.name')}</span>.
-                {t('footer.copyright.rights')}
+                {t("footer.copyright.base")}{" "}
+                <span className="text-primary font-semibold">
+                  {t("footer.copyright.name")}
+                </span>
+                .{t("footer.copyright.rights")}
               </p>
-              <p className="mt-2">
-                {t('footer.phone')}
-              </p>
+              <p className="mt-2">{t("footer.phone")}</p>
             </div>
             <div className="flex gap-6">
               <a

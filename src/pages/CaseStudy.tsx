@@ -23,7 +23,7 @@ const CaseStudy = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Case study data based on your Notion content
+  
   const caseStudyData = {
     title: "Digital Magazine Redesign",
     subtitle:
@@ -89,7 +89,7 @@ const CaseStudy = () => {
               to="/"
               className="text-3xl font-display font-bold text-foreground hover:text-primary transition-colors duration-300"
             >
-              Kong
+              Nick
             </Link>
 
             <div className="w-32"></div>

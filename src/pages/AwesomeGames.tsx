@@ -298,13 +298,6 @@ const AwesomeGames = () => {
               {t('awesomeGames.meta.category')}
             </span>
 
-            <h1 className="text-7xl md:text-9xl font-display font-bold text-foreground leading-tight tracking-tighter">
-              {t('awesomeGames.meta.title')}
-            </h1>
-
-            <p className="text-2xl md:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-body font-light">
-              {t('awesomeGames.meta.subtitle')}
-            </p>
           </div>
 
           <div className="w-full h-[500px] rounded-3xl flex items-center justify-center mt-16 mb-20 scroll-reveal overflow-hidden">

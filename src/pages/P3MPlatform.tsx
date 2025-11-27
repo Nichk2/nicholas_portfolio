@@ -84,13 +84,6 @@ const P3MPlatform = () => {
               {caseStudyData.category}
             </span>
 
-            <h1 className={CASE_STUDY_STYLES.typography.mainTitle}>
-              {caseStudyData.title}
-            </h1>
-
-            <p className={CASE_STUDY_STYLES.typography.subtitle}>
-              {caseStudyData.subtitle}
-            </p>
           </div>
 
           <div className={`w-full h-[500px] flex items-center justify-center mt-16 mb-20 ${CASE_STUDY_STYLES.scrollReveal}`}>
@@ -345,12 +338,12 @@ const P3MPlatform = () => {
             {t("nextProject")}
           </h2>
           <Link
-            to="/case-study/hybras-collab"
+            to="/case-study/AwesomeGames"
             className={`block group transition-all duration-300 ${CASE_STUDY_STYLES.scrollReveal}`}
           >
             <div className={`${CASE_STUDY_STYLES.glassCard} p-12 hover:scale-105 transition-all duration-500`}>
               <h3 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6 group-hover:text-primary transition-colors leading-tight tracking-tighter">
-                HYBRAS COLLAB
+                AWESOMEAGAMES
               </h3>
               <p className="text-muted-foreground mb-8 text-xl font-body font-light">
                 {t("caseStudy.descriptionLabel")}

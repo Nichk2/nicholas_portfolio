@@ -51,9 +51,7 @@ const Hero = () => {
           <p className="text-3xl md:text-4xl text-accent font-display font-medium tracking-wide">
             {t('subtitle')}
           </p>
-          <p className="text-[16px] md:text-[18px] text-muted-foreground font-body font-light max-w-2xl mx-auto">
-            {t('subtitle2')}
-          </p>
+          
         </motion.div>
 
         <motion.div

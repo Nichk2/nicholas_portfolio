@@ -267,12 +267,6 @@ const MyHolyBooks = () => {
             <span className={CASE_STUDY_STYLES.typography.category}>
               {t('myholybooks.category')}
             </span>
-            <h1 className={CASE_STUDY_STYLES.typography.mainTitle}>
-              {t('myholybooks.title')}
-            </h1>
-            <p className={CASE_STUDY_STYLES.typography.subtitle}>
-              {t('myholybooks.subtitle')}
-            </p>
           </div>
 
           <div className={`w-full flex items-center justify-center mt-16 mb-20 ${CASE_STUDY_STYLES.scrollReveal} p-12`}>
