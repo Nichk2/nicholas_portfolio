@@ -65,7 +65,7 @@ const About = () => {
                   <span className="text-primary font-medium">
                     {t("paragraphs.technical.tools.0")}
                   </span>
-      
+                  
                   , {t("paragraphs.technical.coding")}{" "}
                   <span className="text-primary font-medium">
                     {t("paragraphs.technical.languages")}
@@ -106,16 +106,14 @@ const About = () => {
                 {/* Design Skills */}
                 <div className={`${CASE_STUDY_STYLES.glassCard} p-6 rounded-2xl`}>
                   <h3 className="font-display font-semibold text-primary mb-6 text-xl">
-                    Design
+                    {t("skills.design.title")}
                   </h3>
                   <ul className="text-muted-foreground space-y-3 font-body">
-                    {[
-                      "UI/UX Design",
-                      "Visual Design",
-                      "Prototyping",
-                      "Design Systems",
-                      "Front-End Knowledge"
-                    ].map((skill, index) => (
+                    {(
+                      t("skills.design.items", {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((skill, index) => (
                       <li key={index} className="flex items-center space-x-3">
                         <span
                           className={`w-2 h-2 rounded-full ${
@@ -131,15 +129,14 @@ const About = () => {
                 {/* Research Skills */}
                 <div className={`${CASE_STUDY_STYLES.glassCard} p-6 rounded-2xl`}>
                   <h3 className="font-display font-semibold text-accent mb-6 text-xl">
-                    Research
+                    {t("skills.research.title")}
                   </h3>
                   <ul className="text-muted-foreground space-y-3 font-body">
-                    {[
-                      "User Research",
-                      "Usability Testing",
-                      "Strategy",
-                      "Data Analysis"
-                    ].map((skill, index) => (
+                    {(
+                      t("skills.research.items", {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((skill, index) => (
                       <li key={index} className="flex items-center space-x-3">
                         <span
                           className={`w-2 h-2 rounded-full ${
@@ -153,7 +150,7 @@ const About = () => {
                 </div>
 
                 {/* AI Skills with Neon Stroke - Wider Box */}
-                <div className="relative col-span-1 md:col-span-2"> {/* This makes it full width */}
+                <div className="relative col-span-1 md:col-span-2">
                   <motion.div
                     className={`relative p-6 rounded-2xl ${CASE_STUDY_STYLES.glassCard}`}
                   >
@@ -206,19 +203,16 @@ const About = () => {
                           ></path>
                         </svg>
                         <h3 className="font-display font-semibold text-accent text-xl">
-                          AI
+                          {t("skills.ai.title")}
                         </h3>
                       </div>
                       
                       <ul className="text-muted-foreground space-y-3 font-body">
-                        {[
-                          "LoRA/QLoRA",
-                          "Fine-Tuning and model adaptation",
-                          "Retrieval-Augmented Generation (RAG)",
-                          "Quantization",
-                          "Agentic Workflows",
-                          "LangChain and Python for AI development"
-                        ].map((skill, index) => (
+                        {(
+                          t("skills.ai.items", {
+                            returnObjects: true,
+                          }) as string[]
+                        ).map((skill, index) => (
                           <li key={index} className="flex items-center space-x-3">
                             <span
                               className={`w-2 h-2 rounded-full ${
