@@ -8,6 +8,11 @@
     }
   },
   "projects": {
+    "visabuddy": {
+      "title": "VisaBuddy",
+      "subtitle": "Assistente de aplicação de visto com IA",
+      "category": "IA / FULLSTACK / UX-UI DESIGN"
+    },
     "photox": {
       "title": "PHOTOX",
       "subtitle": "Plataforma de Taxa de Carbono e NFT",

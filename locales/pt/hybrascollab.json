@@ -96,6 +96,11 @@
         "Entregamos com sucesso os designs finais de UX/UI para a equipe de desenvolvimento, com feedback positivo do cliente.",
         "O projeto está atualmente em desenvolvimento, com resultados a serem medidos após o lançamento."
       ]
+    },
+    "nextProject": {
+      "title": "MyHolyBooks",
+      "description": "Rede social religiosa",
+      "cta": "Ver estudo de caso"
     }
   }
 }

@@ -96,6 +96,11 @@
         "Successfully handed off finalized UX/UI designs to the development team, with positive feedback from the client.",
         "Project is currently under development, with outcomes to be measured post-launch."
       ]
+    },
+    "nextProject": {
+      "title": "MyHolyBooks",
+      "description": "Religious social network",
+      "cta": "View case study"
     }
   }
 }

@@ -76,8 +76,9 @@
     "nextProject": {
       "title": "Next Project",
       "p3mPlatform": "P3M Platform Redesign",
-      "description": "Enterprise project management platform",
-      "viewCaseStudy": "View case study"
+      "description": "Natural Resources Map Platform",
+      "viewCaseStudy": "View case study",
+      "cta": "View case study"
     }
   }
 }
