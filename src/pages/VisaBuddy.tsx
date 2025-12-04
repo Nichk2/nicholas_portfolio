@@ -28,6 +28,7 @@ import Tailwind from "../Image/VisaBuddy/tailwindcss.svg";
 import ReactLogo from "../Image/VisaBuddy/react.svg";
 import Typescript from "../Image/VisaBuddy/typescript.svg";
 import FramerMotion from "../Image/VisaBuddy/framer motion.svg";
+import Noodles from "../Image/VisaBuddy/noodles.jpeg"
 
 const VisaBuddy = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -269,6 +270,18 @@ const VisaBuddy = () => {
             <p className={`${CASE_STUDY_STYLES.typography.body} mb-12`}>
               {t('visaBuddy.content.designDescription')}
             </p>
+            
+            {/* NOODLES */}
+            <div className={`${CASE_STUDY_STYLES.glassCard} p-6 mb-8`}>
+              <h3 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6">
+                Starting oldschool
+              </h3>
+              <img 
+                src={Noodles} 
+                alt="noodles" 
+                className="w-full h-auto rounded-lg" 
+              />
+            </div>
 
             {/* Design Evolution Carousel */}
             <div className="relative w-full  overflow-hidden rounded-2xl enhanced-glass">
