@@ -56,7 +56,7 @@
           "sentenceTransformers": "Sentence-Transformers",
           "sentenceTransformersDesc": "Geração de embeddings"
         },
-        "frontendDescription": "Desenvolvemos um frontend React + TypeScript com Vite para performance ótima. Implementamos hooks personalizados (useVisaBuddy) para gerenciamento de estado e comunicação API, com camadas de serviço tipadas (visaBuddyApi.ts) garantindo tratamento robusto de erros. A UI utiliza Tailwind com efeitos de glass morphism personalizados, Framer Motion para animações suaves e persistência localStorage para histórico de chats. A arquitetura de componentes inclui modais reutilizáveis, utilitários inteligentes de formatação de data e padrões de design responsivo.",
+        "frontendDescription": "Desenvolvemos um frontend React + TypeScript com Vite para performance ótima. Implementamos hooks personalizados (useVisaBuddy) para gerenciamento de estado e comunicação API, com camadas de serviço tipadas (visaBuddyApi.ts) garantindo tratamento robusto de erros. A UI utiliza Tailwind com efeitos personalizados, Framer Motion para animações suaves e persistência localStorage para histórico de chats. A arquitetura de componentes inclui modais reutilizáveis, utilitários inteligentes de formatação de data e padrões de design responsivo.",
         "frontendDemoTitle": "Demonstração do Frontend",
         "frontendDemoDescription": "Interface de chat interativa com respostas em tempo real e animações suaves.",
         "frontendTech": {
