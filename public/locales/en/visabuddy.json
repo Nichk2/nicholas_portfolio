@@ -56,7 +56,7 @@
           "sentenceTransformers": "Sentence-Transformers",
           "sentenceTransformersDesc": "Embedding generation"
         },
-        "frontendDescription": "Developed a React + TypeScript frontend with Vite for optimal performance. Implemented custom hooks (useVisaBuddy) for state management and API communication, with typed service layers (visaBuddyApi.ts) ensuring robust error handling. The UI leverages Tailwind with custom glass morphism effects, Framer Motion for smooth animations, and localStorage persistence for chat history. The component architecture features reusable modals, intelligent date formatting utilities, and responsive design patterns.",
+        "frontendDescription": "Developed a React + TypeScript frontend with Vite for optimal performance. Implemented custom hooks (useVisaBuddy) for state management and API communication, with typed service layers (visaBuddyApi.ts) ensuring robust error handling. The UI leverages Tailwind with custom effects, Framer Motion for smooth animations, and localStorage persistence for chat history. The component architecture features reusable modals, intelligent date formatting utilities, and responsive design patterns.",
         "frontendDemoTitle": "Frontend Demo",
         "frontendDemoDescription": "Interactive chat interface with real-time responses and smooth animations.",
         "frontendTech": {
