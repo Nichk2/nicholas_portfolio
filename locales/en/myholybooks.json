@@ -39,14 +39,14 @@
         "designExploration": "Design Exploration",
         "designExplorationSub": "Sketches, style exploration, and color palette development",
         "featureExploration": "Feature Exploration",
-        "featureTitles": [
-          "1 - Create Your Own Group",
-          "2 - Multi-Language Support"
-        ],
-        "featureDescriptions": [
-          "Implemented group creation feature to allow users to connect around specific interests or Bible study topics.",
-          "Added language selection to enable users to explore faith across different cultures and Bible translations."
-        ]
+        "featureTitle 1": "1 - Create Your Own Group", 
+        "featureTitle 2": "2 - Multi-Language Support",
+        "featureTitleBox 1": "1 - Create Your Own Group",
+        "featureTitleBox 2": "2 - Multi-Language Support",
+        "featureContainer 1": "Implemented group creation feature to allow users to connect around specific interests or Bible study topics.", 
+        "featureContainerText 1": "Group creation interface showing how users can form communities around shared interests", 
+        "featureContainer 2": "Added language selection to enable users to explore faith across different cultures and Bible translations.", 
+        "featureContainerText 2": "Language selection interface supporting multiple translations and cultural contexts"
       },
       "prototype": {
         "title": "Prototype",

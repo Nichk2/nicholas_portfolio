@@ -1,5 +1,5 @@
 {
-  "title": "me.",
+  "title": "About me.",
   "paragraphs": {
     "intercultural": {
       "base": "With a background in international studies and hands-on experience in Canada, I bring a deep understanding of",
@@ -15,7 +15,7 @@
       "base": "I continuously expand my technical toolkit. My current stack includes",
       "tools": ["Figma"],
       "coding": "and strong knowledge of",
-      "languages": "HTML5, CSS3, JavaScript (Typescript), React, and React Native, along with growing experience in Python and AI engineering (LoRA/QLoRA, Fine-Tuning, RAG, Quantization)",
+      "languages": "HTML5, CSS3, JavaScript (Typescript), React, Next.js and React Native, along with growing experience in Python and AI engineering (LoRA/QLoRA, Fine-Tuning, RAG, Quantization)",
       "suffix": "."
     },
     "approach": {
@@ -23,7 +23,7 @@
     },
     "design": {
       "base": "I believe exceptional design should feel effortless — solving complex problems while creating",
-      "highlight": "genuinely delightful experiences",
+      "highlight": "genuinely experiences",
       "suffix": "."
     }
   },
@@ -34,8 +34,7 @@
         "UI/UX Design",
         "Visual Design",
         "Prototyping",
-        "Design Systems",
-        "Front-End Knowledge"
+        "Design Systems"
       ]
     },
     "research": {
@@ -45,6 +44,18 @@
         "Usability Testing",
         "Strategy",
         "Data Analysis"
+      ]
+    },
+    "frontend": {
+      "title": "Frontend Development",
+      "items": [
+        "React & Next.js Applications",
+        "TypeScript Development",
+        "Responsive Web Design",
+        "API Integration",
+        "Performance Optimization",
+        "Component Libraries",
+        "Progressive Web Apps"
       ]
     },
     "ai": {

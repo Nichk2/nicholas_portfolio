@@ -39,14 +39,14 @@
         "designExploration": "Exploração de Design",
         "designExplorationSub": "Esboços, exploração de estilo e desenvolvimento de paleta de cores",
         "featureExploration": "Exploração de Funcionalidades",
-        "featureTitles": [
-          "1 - Crie Seu Próprio Grupo",
-          "2 - Suporte Multi-idioma"
-        ],
-        "featureDescriptions": [
-          "Implementada funcionalidade de criação de grupos para permitir que usuários se conectem em torno de interesses específicos ou tópicos de estudo bíblico.",
-          "Adicionada seleção de idioma para permitir que usuários explorem a fé através de diferentes culturas e traduções bíblicas."
-        ]
+        "featureTitle 1": "1 - Crie seu grupo", 
+        "featureTitle 2": "2 - Suporte para idiomas",
+        "featureTitleBox 1": "1 - Crie seu grupo",
+        "featureTitleBox 2": "2 - Suporte para idiomas",
+        "featureContainer 1": "Implementamos a funcionalidade de criação de grupos para permitir que os usuários se conectem em torno de interesses específicos ou tópicos de estudo bíblico.", 
+        "featureContainerText 1": "Interface de criação de grupos mostrando como os usuários podem formar comunidades em torno de interesses em comum.", 
+        "featureContainer 2": "Adicionada seleção de idioma para permitir que os usuários explorem a fé em diferentes culturas e traduções da Bíblia.", 
+        "featureContainerText 2": "Interface de seleção de idioma que suporta múltiplas traduções e contextos culturais."
       },
       "prototype": {
         "title": "Prototipar",
